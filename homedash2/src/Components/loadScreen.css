@@ -1,0 +1,36 @@
+#logocontainer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#logoloading {
+    color: black;
+    font-size: 2rem;
+}
+
+.App-logo {
+  height: auto;
+  width: 30%;
+  pointer-events: none;
+  border-radius: 100%;
+}
+
+div.loadspacer {
+    width: 35%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

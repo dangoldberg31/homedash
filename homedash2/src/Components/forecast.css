@@ -1,0 +1,145 @@
+#container {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherHeading {
+    font-size: 2rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#mainWeather {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 2% 1% 0 1%;
+}
+
+#nowtemp {
+    font-size: 5rem;
+    font-weight: 600;
+    width: 40%;
+    margin: 0;
+    padding: 2%;
+    display: inline-block
+}
+
+#weathericon {
+    width: 20%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#nowdesc {
+    font-size: 3rem;
+    width: 40%;
+    font-weight: 600;
+    margin: 0;
+    padding: 3% 1% 0% 0%;
+    display: inline-block
+}
+
+p.currentdata {
+    width: 100%;
+    font-size: 3rem;
+    display: inline;
+}
+
+p.weatherData {
+    width: 100%;
+    display: inline;
+    font-size: 1.2rem;
+}
+span.data {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+#dataContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 1% 0;
+    padding: 0;
+}
+
+div.infoBox {
+    /* border: green 1px solid; */
+    display: inline-flex;
+    width: 100%;
+    /* align-self: center;
+    text-align: center;
+    justify-content: center; */
+}
+
+h2.header {
+    font-size: 1.4rem;
+    margin: 0% 0% 1% 0%;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.elementContainer {
+    font-size: .9rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#fiveday {
+    margin: 5% 1%;
+}
+
+#forecastday {
+    display: inline-block;
+    margin: 0%;
+    padding: 1%;
+    text-align: center;
+
+}
+
+div.childcontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#hourly {
+    margin: 5% 1%;
+}
+
+#nexthour {
+    margin: 5% 1%;
+}
+
+#forecasthour {
+    display: inline-block;
+    margin: 0%;
+    padding: 1%;
+    width: 15%;
+    text-align: center;
+}
+
+.todaydata {
+    width: 18%;
+    padding: 0;
+    /* margin: 0; */
+}
+
+#feelslikedata {
+    display: inline;
+    font-size: 1.2rem;
+}

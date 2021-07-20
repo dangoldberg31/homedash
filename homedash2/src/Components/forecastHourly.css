@@ -1,0 +1,40 @@
+#hourlycontainer {
+    margin: 1% 0;
+    padding: 0;
+}
+
+#weatherData {
+    margin: 0;
+    padding: 0;
+}
+
+p.info {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    /* border: purple 1px solid; */
+}
+
+#hour {
+    font-weight: 600;
+
+}
+
+#hourimage {
+    margin: 0;
+    padding: 0;
+    width: 60%;
+}
+
+#spacingcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.hourspacer {
+    width: 20%;
+}
+
+#hourtemp {
+    font-size: 1.3rem;
+}

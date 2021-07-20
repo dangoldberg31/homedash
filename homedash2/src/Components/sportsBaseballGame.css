@@ -1,0 +1,127 @@
+#gamescoreouter {
+    display: inline-block;
+    margin: 1%;
+    border: 2px black double;
+}
+
+/* #mostrecentgamescoreouter {
+    display: inline-block;
+    margin: 1%;
+    border: 2px black double;
+    width: 100%;
+} */
+
+h3.gameheader {
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+p.gamedata {
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0;
+}
+
+#scorecontainer {
+    display: block;
+}
+
+#dateofgame {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+p.test {
+    margin: 0;
+    padding: 0;
+}
+
+p.hedata {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+}
+p.finalscore {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: inline;
+    margin: 1% 0;
+}
+
+#score {
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline;
+}
+
+#moreinfo {
+    padding: 0;
+    margin: 0;  
+}
+
+#teamscontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3.gameheader {
+    display: block;
+}
+
+div.logocontainer {
+    display: inline-block;
+    width: 40%;
+
+}
+#at {
+    width: 5%;
+    display: inline-block;
+    text-align: center;
+}
+
+img.teamlogo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 
+#recentgameflexcontainer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#recentgameteamscontainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 2%;
+    width: 33%;
+}
+
+#recentgamedateofgame {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+#recentgamegameresult {
+    width: 33%;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+#recentgamemoreinfo {
+    width: 33%;
+    margin: 0;
+    padding: 0;
+} */

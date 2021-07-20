@@ -1,0 +1,140 @@
+#nytimes {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#masthead {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1% 0% .5% 0%;
+    height: auto;
+    margin: 0%;
+}
+
+#nytlogo {
+    width: 30%;
+    height: auto;
+    margin: 0, auto;
+    padding: .5%;
+    display: inline-flex;
+}
+
+div.spacer {
+    width: 35%;
+    height: auto;
+    display: inline-flex;
+}
+
+#threecolumncontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
+
+#twocolumncontainer {
+    display: none;
+}
+
+#onecolumncontainer {
+    display: none;
+}
+
+div.column1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 1%;
+    text-align: justify;
+}
+
+div.column2 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 1%;
+    text-align: justify;
+}
+
+div.column3 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 1%;
+    text-align: justify;
+}
+
+div.article {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1920px) {
+
+    #threecolumncontainer {
+        display: none;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+    
+    #twocolumncontainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+
+    #onecolumncontainer {
+        display: none
+    }
+    
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    #threecolumncontainer {
+        display: none;
+    }
+    
+    #twocolumncontainer {
+        display: none
+    }
+
+    #onecolumncontainer {
+        display: block;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+
+    
+}
