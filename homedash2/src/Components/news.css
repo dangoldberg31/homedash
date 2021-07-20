@@ -1,6 +1,6 @@
 #nytimes {
     font-family: 'Times New Roman', Times, serif;
-    background-color: white;
+    /* background-color: black; */
     padding: 0%;
     box-sizing: border-box;
     display: flex;
@@ -30,6 +30,8 @@ div.spacer {
 }
 
 #threecolumncontainer {
+    background-color: black;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
