@@ -75,7 +75,7 @@ export const MTA = ({MTAKey}) => {
     // } else {
         return (
             <div id="MTA">
-                <h2 id="mtaheading">MTA Status</h2>
+                <h1 id="mtaheading" className="sectionheader">MTA Status</h1>
                 <div className="container" id="mtaBody" >
                     <p>Placeholder</p>
                     <div className="mtasection">

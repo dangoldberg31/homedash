@@ -2,27 +2,98 @@
 import {Sports} from './sports';
 import {Market} from './market'
 import {News} from './news';
-import {LoadScreen} from './loadScreen'
 import './panel1.css'
 import { useState, useEffect } from 'react';
 // import {Calendar} from './Components/calendar';
 
 export const Panel1 = () => {
-  const [sportsView, setSportsView] = useState({display: 'none'});
-  const [marketView, setMarketView] = useState({display: 'none'});
-  const [newsView, setNewsView] = useState({display: 'block'});
+  const [panel, setPanel] = useState('news');
+  const [sportsButton, setSportsButton] = useState({'backgroundColor': 'black'});
+  const [marketButton, setMarketButton] = useState({'backgroundColor': 'black'});
+  const [newsButton, setNewsButton] = useState({'backgroundColor': 'grey'});
 
-  return (
-    <div id="panelcontainer">
-      <div className="panelcomponent">
-        <Sports />
+  const marketChooser = (event) => {
+    setPanel('market')
+    setMarketButton({'backgroundColor': 'grey'});
+    setNewsButton({'backgroundColor': 'black'});
+    setSportsButton({'backgroundColor': 'black'})
+  }
+
+  const sportsChooser = (event) => {
+    setPanel('sports')
+    setMarketButton({'backgroundColor': 'black'});
+    setNewsButton({'backgroundColor': 'black'});
+    setSportsButton({'backgroundColor': 'grey'})
+  }
+
+  const newsChooser = (event) => {
+    setPanel('news')
+    setMarketButton({'backgroundColor': 'black'});
+    setNewsButton({'backgroundColor': 'grey'});
+    setSportsButton({'backgroundColor': 'black'})
+  }
+
+  useEffect(() => {
+
+  },[panel])
+
+  if (panel === 'news') {
+    return (
+      <div id="panelcontainer">
+        <div id="buttons">
+          <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
+            <p id="newsbutton" className="selector" >News</p>
+          </div>
+          <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
+            <p id="marketbutton" className="selector" >Market</p>
+          </div>
+          <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
+            <p id="sportsbutton" className="selector" >Sports</p>
+          </div>
+        </div>
+        <div className="panelcomponent" >
+          <News />
+        </div>
       </div>
-      <div className="panelcomponent">
-        <News />
+    )
+  } else if (panel === 'market') {
+    return (
+      <div id="panelcontainer">
+        <div id="buttons">
+          <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
+            <p id="newsbutton" className="selector" >News</p>
+          </div>
+          <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
+            <p id="marketbutton" className="selector" >Market</p>
+          </div>
+          <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
+            <p id="sportsbutton" className="selector" >Sports</p>
+          </div>
+        </div>
+        <div className="panelcomponent" >
+          <Market />
+        </div>
       </div>
-      <div className="panelcomponent">
-        <Market />
+    )
+
+  } else if (panel === 'sports') {
+    return (
+      <div id="panelcontainer">
+        <div id="buttons">
+          <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
+            <p id="newsbutton" className="selector" >News</p>
+          </div>
+          <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
+            <p id="marketbutton" className="selector" >Market</p>
+          </div>
+          <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
+            <p id="sportsbutton" className="selector" >Sports</p>
+          </div>
+        </div>
+        <div className="panelcomponent">
+          <Sports />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }

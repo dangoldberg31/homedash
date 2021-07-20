@@ -1,6 +1,7 @@
 import './marketAsset.css'
 import React from "react";
 import {useState, useEffect} from 'react';
+import { LoadScreen } from './loadScreen';
 
 export const Asset = ({asset}) => {
     const [marketName] = useState(asset.name);
@@ -117,7 +118,7 @@ export const Asset = ({asset}) => {
     } else if (!isLoaded) {
         return (
             <div>
-                <p>Loading...</p>
+                <LoadScreen />
             </div>
         )
     } else {

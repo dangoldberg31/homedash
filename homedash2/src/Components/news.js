@@ -2,10 +2,13 @@ import './news.css';
 import React from "react";
 import {useState, useEffect} from 'react';
 import {Article} from './newsArticle'
+import { LoadScreen } from './loadScreen';
 // import nytlogo from '../Resources/nyt logo.jpg';
 
 export const News = () => {
     const [articles, setArticles] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false)
     const NYTKey = '3dYYpNSA16tVAjuFovcSKRsjJofWbzgu';
     const options = {
         method: "GET",
@@ -20,20 +23,34 @@ export const News = () => {
             .then(
                 (result) => {
                   setArticles(result.results);
+                  setIsLoaded(true);
+                },
+                (error) => {
+                    setError(error);
+                    setIsLoaded(true);
                 }
               )
     // eslint-disable-next-line
     }, []);
 
-    return (
-        <div id="nytimes">
-            <div id="masthead">
-                {/* <div className="spacer"></div>
-                <img id="nytlogo" alt="New York Times Logo" src={nytlogo}/>
-                <div className="spacer"></div> */}
-                <h1>News</h1>
+
+
+    if (error) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
             </div>
-            <div id="threecolumncontainer" > 
+        )
+    } else if (!isLoaded) {
+        return (
+            <div>
+                <LoadScreen />
+            </div>
+        )
+    } else {
+        return (
+            <div id="nytimes">
+                {/* <h1 className="sectionheader">News</h1> */}
                 <div className="column1" >
                     {articles.map(article => {
                         if (articles.indexOf(article) % 3 === 0) {
@@ -74,45 +91,6 @@ export const News = () => {
                 })};
                 </div>
             </div>
-            <div id="twocolumncontainer" >
-                <div className="column1" >
-                    {articles.map(article => {
-                        if (articles.indexOf(article) % 2 === 0) {
-                            return(
-                                <div className="article" >
-                                    <Article article={article} id={articles.indexOf(article)} />
-                                </div>
-                            );
-                    } else {
-                        return null
-                    }
-                })};
-                </div>
-                <div className="column2" >
-                {articles.map(article => {
-                        if (articles.indexOf(article) % 2 === 1) {
-                            return(
-                                <div className="article" >
-                                    <Article article={article} id={articles.indexOf(article)} />
-                                </div>
-                            );
-                    } else {
-                        return null
-                    }
-                })};
-                </div>
-            </div>
-            <div id="onecolumncontainer" >
-                <div className="column1" >
-                    {articles.map(article => {
-                        return(
-                            <div className="article" >
-                                <Article article={article} id={articles.indexOf(article)} />
-                            </div>
-                        );
-                })};
-                </div>
-            </div>
-        </div>
-    )
+        )
+    }
 };

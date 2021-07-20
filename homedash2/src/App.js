@@ -1,11 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import {Sports} from './Components/sports';
-import {Market} from './Components/market'
 import {Weather} from './Components/forecast';
-import {News} from './Components/news';
 import {MTA} from './Components/transit';
-import {LoadScreen} from './Components/loadScreen'
 import {Panel1} from './Components/panel1'
 // import {Calendar} from './Components/calendar';
 

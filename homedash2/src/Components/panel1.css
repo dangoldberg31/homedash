@@ -1,0 +1,25 @@
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.panelbuttoncontainer {
+    border-radius: 15px;
+    padding: 1%;
+    margin: 1%;
+    background-color: black;
+    width: 25%;
+}
+
+p.selector {
+    color:white;
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
+}
+
+div.panelcomponent {
+    margin: 0;
+    padding: 0;
+}

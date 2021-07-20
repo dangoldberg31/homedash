@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import {ForecastDaily} from './forecastDaily';
 import {ForecastHourly} from './forecastHourly';
 import {ForecastMinutely} from './forecastMinutely';
+import { LoadScreen } from "./loadScreen";
 
 export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay, weatherKey}) => {
     const [error, setError] = useState(null);
@@ -45,13 +46,13 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay, weath
     } else if (!isLoaded) {
         return (
             <div>
-                <p>Loading...</p>
+                <LoadScreen />
             </div>
         )
     } else {
     return (
         <div id="container">
-            <h1 id="weatherHeading">Weather</h1>
+            <h1 id="weatherHeading" className="sectionheader">Weather</h1>
             <div id="weatherData">
                 <div className="section" id="mainInfo">
                     <div id="mainWeather">

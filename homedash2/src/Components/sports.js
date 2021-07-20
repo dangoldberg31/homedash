@@ -8,7 +8,7 @@ export const Sports = () => {
     
     return (
         <div id="sports">
-            <h2 className="sectionheader">Sports</h2>
+            {/* <h1 className="sectionheader">Sports</h1> */}
             <div className="sportscontainer">
                 <Baseball />
             </div>
