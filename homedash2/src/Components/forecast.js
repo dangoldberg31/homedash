@@ -2,7 +2,7 @@ import "./forecast.css"
 import React from "react";
 import {useState, useEffect} from 'react';
 import {ForecastDaily} from './forecastDaily';
-import {ForecastHourly} from './forecastHourly';
+// import {ForecastHourly} from './forecastHourly';
 // import {ForecastMinutely} from './forecastMinutely';
 import { LoadScreen } from "./loadScreen";
 import {Heading} from './sectionHeader'
@@ -106,13 +106,13 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
             <div id="hourly" className="section">
                 <h2 className="header">Hourly Forecast</h2>
                 <div className="childcontainer" id="hourlycontainer">
-                    {rangeHours.map(index => {
+                    {/* {rangeHours.map(index => {
                         return (
                             <div id="forecasthourly" >
                                 <ForecastHourly forecast={forecast} index={index} convertUnixTime={convertUnixTime} capFirst={capFirst}/>
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
             </div>
             <div id="daily" className="section">
