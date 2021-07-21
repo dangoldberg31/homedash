@@ -19,9 +19,9 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const rangeDays = [1,2,3,4,5];
     const rangeHours = [1, 4, 7, 10, 13, 16];
         
-    const translateAQI = () => {
+    const translateAQI = (data) => {
         let AQI;
-        switch (airQuality['list'][0]['main']['aqi']) {
+        switch (data) {
             case 1:
                 AQI = "Good";
                 break;
@@ -107,8 +107,8 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
                         <p className="weatherData">Gusts <br /> <span className="data">{Math.round(forecast['hourly'][0]['wind_gust'])} mph</span></p>
                     </div>
                     <div className="todaydata">
-                        <p className="weatherData" id="airquality">Air Quality <br /><span className="data">{translateAQI()}</span></p><br />
-                        <p className="weatherData" id="airquality">PM2.5 <br /><span className="data">{Math.round(airQuality['list'][0]['components']['pm2_5'])}</span></p>
+                        <p className="weatherData" id="airquality">Air Quality <br /><span className="data">{airQuality[1]}</span></p><br />
+                        <p className="weatherData" id="airquality">PM2.5 <br /><span className="data">{airQuality[0]}</span></p>
                     </div>
                     <div className="todaydata" id="todaydatacenter">
                         <p className="weatherDatacenter" id="feelslike">Feels Like <br /><span className="datacenter">{Math.round(forecast['current']['feels_like'])} F</span></p><br />
