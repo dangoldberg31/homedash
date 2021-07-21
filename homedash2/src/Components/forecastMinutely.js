@@ -1,6 +1,7 @@
 import React from 'react';
 import './forecastMinutely.css'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { LoadScreen } from './loadScreen';
 import {useState, useEffect} from 'react';
 
 export const ForecastMinutely = ({forecast, convertUnixTime}) => {
@@ -49,11 +50,11 @@ export const ForecastMinutely = ({forecast, convertUnixTime}) => {
         </div>
     )
   } else if (!isLoaded) {
-      return (
-          <div>
-              <p>Loading...</p>
-          </div>
-      )
+    return (
+      <div>
+          <LoadScreen />
+      </div>
+  )
   } else if (!rain) {
     return (
         <div className="rain">

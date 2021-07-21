@@ -3,7 +3,7 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import {ForecastDaily} from './forecastDaily';
 import {ForecastHourly} from './forecastHourly';
-import {ForecastMinutely} from './forecastMinutely';
+// import {ForecastMinutely} from './forecastMinutely';
 import { LoadScreen } from "./loadScreen";
 import {Heading} from './sectionHeader'
 import { ForecastCurrently } from "./forecastCurrently";
@@ -97,30 +97,30 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
         <div id="container">
             <Heading text="Weather"/>
             <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} />
-            <div id="nexthour" className="section">
+            <div id="minutely" className="section">
                 <h2 className="header">Next Hour Rainfall</h2>
-                <div id="nexthourforecast" className="elementContainer">
+                {/* <div className="childcontainer" id="forecastminutely" >
                     <ForecastMinutely forecast={forecast} convertUnixTime={convertUnixTime}/>
-                </div>
+                </div> */}
             </div>
             <div id="hourly" className="section">
                 <h2 className="header">Hourly Forecast</h2>
                 <div className="childcontainer" id="hourlycontainer">
                     {rangeHours.map(index => {
                         return (
-                            <div id="forecasthour" className="elementContainer">
+                            <div id="forecasthourly" >
                                 <ForecastHourly forecast={forecast} index={index} convertUnixTime={convertUnixTime} capFirst={capFirst}/>
                             </div>
                         )
                     })}
                 </div>
             </div>
-            <div id="fiveday" className="section">
+            <div id="daily" className="section">
                 <h2 className="header">5 Day Forecast</h2>
                 <div className="childcontainer" id="dailycontainer">
                     {rangeDays.map(index => {
                         return (
-                            <div id="forecastday" className="elementContainer">
+                            <div id="forecastdaily" >
                                 <ForecastDaily forecast={forecast} index={index} convertUnixDate={convertUnixDate}/>
                             </div>
                         )
