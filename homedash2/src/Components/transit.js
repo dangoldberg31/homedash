@@ -2,6 +2,7 @@ import './transit.css';
 import React from "react";
     // eslint-disable-next-line
 import {useState, useEffect} from 'react';
+import {Heading} from './sectionHeader'
 // eslint-disable-next-line
 // import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 
@@ -75,7 +76,7 @@ export const MTA = ({MTAKey}) => {
     // } else {
         return (
             <div id="MTA">
-                <h1 id="mtaheading" className="sectionheader">MTA Status</h1>
+                <Heading text="MTA"/>
                 <div className="container" id="mtaBody" >
                     <p>Placeholder</p>
                     <div className="mtasection">

@@ -43,8 +43,6 @@
     display: inline-block
 }
 
-
-
 p.weatherData {
     width: 100%;
     display: inline;
@@ -72,13 +70,6 @@ div.infoBox {
     /* align-self: center;
     text-align: center;
     justify-content: center; */
-}
-
-h2.header {
-    font-size: 1.4rem;
-    margin: 0% 0% 1% 0%;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 div.elementContainer {

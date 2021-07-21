@@ -4,6 +4,7 @@ import {Market} from './market'
 import {News} from './news';
 import './panel1.css'
 import { useState, useEffect } from 'react';
+import {Heading} from './sectionHeader'
 // import {Calendar} from './Components/calendar';
 
 export const Panel1 = () => {
@@ -42,13 +43,13 @@ export const Panel1 = () => {
       <div id="panelcontainer">
         <div id="buttons">
           <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
-            <p id="newsbutton" className="selector" >News</p>
+            <Heading text="News"/>
           </div>
           <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
-            <p id="marketbutton" className="selector" >Market</p>
+            <Heading text="Markets"/>
           </div>
           <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
-            <p id="sportsbutton" className="selector" >Sports</p>
+            <Heading text="Sports"/>
           </div>
         </div>
         <div className="panelcomponent" >
@@ -61,13 +62,13 @@ export const Panel1 = () => {
       <div id="panelcontainer">
         <div id="buttons">
           <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
-            <p id="newsbutton" className="selector" >News</p>
+            <Heading text="News"/>
           </div>
           <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
-            <p id="marketbutton" className="selector" >Market</p>
+            <Heading text="Markets"/>
           </div>
           <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
-            <p id="sportsbutton" className="selector" >Sports</p>
+            <Heading text="Sports"/>
           </div>
         </div>
         <div className="panelcomponent" >
@@ -81,13 +82,13 @@ export const Panel1 = () => {
       <div id="panelcontainer">
         <div id="buttons">
           <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
-            <p id="newsbutton" className="selector" >News</p>
+            <Heading text="News"/>  
           </div>
           <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
-            <p id="marketbutton" className="selector" >Market</p>
+            <Heading text="Markets"/>
           </div>
           <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
-            <p id="sportsbutton" className="selector" >Sports</p>
+            <Heading text="Sports"/>
           </div>
         </div>
         <div className="panelcomponent">
