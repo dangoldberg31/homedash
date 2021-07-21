@@ -1,0 +1,88 @@
+#container {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#mainWeather {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 2% 1% 0 1%;
+}
+
+#nowtemp {
+    font-size: 5rem;
+    font-weight: 600;
+    width: 40%;
+    margin: 0;
+    padding: 2%;
+    display: inline-block
+}
+
+#weathericon {
+    width: 20%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#nowdesc {
+    font-size: 3rem;
+    width: 40%;
+    font-weight: 600;
+    margin: 0;
+    padding: 3% 1% 0% 0%;
+    display: inline-block
+}
+
+p.weatherData {
+    width: 100%;
+    display: inline;
+    font-size: 1.1rem;
+}
+span.data {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+#dataContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1% 0;
+    padding: 0;
+}
+
+div.todaydata {
+    width: 18%;
+    padding: 0;
+    /* margin: 0; */
+}
+
+#todaydatacenter {
+    margin: 0 4%;
+}
+
+p.weatherDatacenter {
+    width: 100%;
+    height: 100%;
+    display: inline;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+span.datacenter {
+    font-weight: 600;
+    font-size: 2.2rem;
+
+}

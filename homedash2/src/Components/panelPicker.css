@@ -1,0 +1,14 @@
+div.panelbuttoncontainer {
+    border: 1px solid grey;
+    padding: 1%;
+    margin: 0%;
+    background-color: black;
+    width: 33%;
+}
+
+#panelPicker {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
