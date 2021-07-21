@@ -1,12 +1,12 @@
 import "./forecast.css"
 import React from "react";
 import {useState, useEffect} from 'react';
-// import {ForecastDaily} from './forecastDaily';
-// import {ForecastHourly} from './forecastHourly';
-// import {ForecastMinutely} from './forecastMinutely';
+import {ForecastDaily} from './forecastDaily';
+import {ForecastHourly} from './forecastHourly';
+import {ForecastMinutely} from './forecastMinutely';
 import { LoadScreen } from "./loadScreen";
 import {Heading} from './sectionHeader'
-import { ForecastCurrently } from "./forecastCurrently";
+// import { ForecastCurrently } from "./forecastCurrently";
 
 export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const [error, setError] = useState(null);
@@ -21,8 +21,8 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const x = -73.94357;
     const y = 40.82587;
     const exclude = ''
-    // const rangeDays = [1,2,3,4,5];
-    // const rangeHours = [1, 4, 7, 10, 13, 16];
+    const rangeDays = [1,2,3,4,5];
+    const rangeHours = [1, 4, 7, 10, 13, 16];
         
     const translateAQI = (data) => {
         let AQI;
@@ -99,28 +99,28 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     return (
         <div id="container">
             <Heading text="Weather"/>
-            <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} />
+            {/* <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} /> */}
             <div id="minutely" className="section">
                 <h2 className="header">Next Hour Rainfall</h2>
-                {/* <div className="childcontainer" id="forecastminutely" >
+                <div className="childcontainer" id="forecastminutely" >
                     <ForecastMinutely forecast={forecast} convertUnixTime={convertUnixTime}/>
-                </div> */}
+                </div>
             </div>
             <div id="hourly" className="section">
                 <h2 className="header">Hourly Forecast</h2>
                 <div className="childcontainer" id="hourlycontainer">
-                    {/* {rangeHours.map(index => {
+                    {rangeHours.map(index => {
                         return (
                             <div id="forecasthourly" >
                                 <ForecastHourly forecast={forecast} index={index} convertUnixTime={convertUnixTime} capFirst={capFirst}/>
                             </div>
                         )
-                    })} */}
+                    })}
                 </div>
             </div>
             <div id="daily" className="section">
                 <h2 className="header">5 Day Forecast</h2>
-                {/* <div className="childcontainer" id="dailycontainer">
+                <div className="childcontainer" id="dailycontainer">
                     {rangeDays.map(index => {
                         return (
                             <div id="forecastdaily" >
@@ -128,7 +128,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
                             </div>
                         )
                     })}
-                </div> */}
+                </div>
             </div>
         </div>
     )
