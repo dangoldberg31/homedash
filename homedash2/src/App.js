@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import {Weather} from './Components/forecast';
+// import {Weather} from './Components/forecast';
 import {MTA} from './Components/transit';
 import {Panel1} from './Components/panel1'
 // import {Calendar} from './Components/calendar';
@@ -76,7 +76,7 @@ function App() {
           <Panel1 />
         </div>
         <div id="panel2" className="sectioncontainer" >
-          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate}/>
+          {/* <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate}/> */}
         </div>
         {/* <div id="testweather" className="sectioncontainer" >
           <TestWeather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} weatherKey={weatherKey}/>
