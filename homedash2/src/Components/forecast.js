@@ -19,7 +19,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const y = 40.82587;
     const exclude = ''
     const rangeDays = [1,2,3,4,5];
-    const rangeHours = [1, 4, 7, 10, 13, 16];
+    // const rangeHours = [1, 4, 7, 10, 13, 16];
         
     const translateAQI = (data) => {
         let AQI;
