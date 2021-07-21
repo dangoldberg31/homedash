@@ -11,7 +11,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [forecast, setForecast] = useState();
     const [image, setImage] = useState(null);
-    const [airQuality, setAirQuality] = useState(null);
+    const [airQuality, setAirQuality] = useState(['loading...','loading...']);
     const weatherKey = '438933efb34a9a9a24caa81bf3a40b11';
     const x = -73.94357;
     const y = 40.82587;
@@ -43,20 +43,6 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
           return AQI;
     }
 
-    const airError = {
-        "list":[
-          {
-            "dt":1605182400,
-            "main":{
-              "aqi":"error"
-            },
-            "components":{
-              "pm2_5":"error"
-            }
-          }
-        ]
-      } 
-
     useEffect(() => {
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${y}&lon=${x}&exclude=${exclude}&units=imperial&appid=${weatherKey}`)
             .then(res => res.json())
@@ -75,12 +61,15 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
             .then(resp => resp.json())
             .then(
                 (airResult) => {
-                    setAirQuality(airResult);
+                    let pm25 = Math.round(airResult['list'][0]['components']['pm2_5']);
+                    let quality = translateAQI(airResult['list'][0]['main']['aqi']);
+                    setAirQuality([pm25, quality]);
                 },
                 (error) => {
-                    setAirQuality(airError);
+                    setAirQuality([error, error]);
                 }
             )
+            // eslint-disable-next-line
     }, [weatherKey, x]);
     
     const capFirst = (string) => {
