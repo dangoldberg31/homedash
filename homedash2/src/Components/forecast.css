@@ -43,20 +43,16 @@
     display: inline-block
 }
 
-p.currentdata {
-    width: 100%;
-    font-size: 3rem;
-    display: inline;
-}
+
 
 p.weatherData {
     width: 100%;
     display: inline;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 span.data {
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
 }
 
 #dataContainer {
@@ -64,6 +60,7 @@ span.data {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin: 0 0 1% 0;
     padding: 0;
 }
@@ -125,13 +122,26 @@ div.childcontainer {
     text-align: center;
 }
 
-.todaydata {
+div.todaydata {
     width: 18%;
     padding: 0;
     /* margin: 0; */
 }
 
-#feelslikedata {
+#todaydatacenter {
+    margin: 0 4%;
+}
+
+p.weatherDatacenter {
+    width: 100%;
+    height: 100%;
     display: inline;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+span.datacenter {
+    font-weight: 600;
+    font-size: 2.2rem;
+
 }

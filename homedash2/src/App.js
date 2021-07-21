@@ -7,7 +7,6 @@ import {Panel1} from './Components/panel1'
 
 function App() {
   const MTAKey = 'QXl3O3OrxU6T9894CHagv9t72mModQkk2zHmK1ad';
-  const weatherKey = '438933efb34a9a9a24caa81bf3a40b11';
 
   const convertUnixTime = (num) => {
     let timeArray = [];
@@ -77,7 +76,7 @@ function App() {
           <Panel1 />
         </div>
         <div id="panel2" className="sectioncontainer" >
-          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} weatherKey={weatherKey}/>
+          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate}/>
         </div>
         {/* <div id="testweather" className="sectioncontainer" >
           <TestWeather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} weatherKey={weatherKey}/>
