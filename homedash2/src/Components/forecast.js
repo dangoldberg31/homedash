@@ -43,6 +43,20 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
           return AQI;
     }
 
+    const airError = {
+        "list":[
+          {
+            "dt":1605182400,
+            "main":{
+              "aqi":"error"
+            },
+            "components":{
+              "pm2_5":"error"
+            }
+          }
+        ]
+      } 
+
     useEffect(() => {
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${y}&lon=${x}&exclude=${exclude}&units=imperial&appid=${weatherKey}`)
             .then(res => res.json())
@@ -64,7 +78,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
                     setAirQuality(airResult);
                 },
                 (error) => {
-                    setAirQuality(error);
+                    setAirQuality(airError);
                 }
             )
     }, [weatherKey, x]);
