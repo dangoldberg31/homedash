@@ -20,7 +20,7 @@ export const Index = ({data, dataDay, convertUnixDate, convertUnixTime}) => {
         } else if (hour < 13) {
             amPm = 'AM'
         }
-        return date[1];
+        return hour+':'+minute+' '+amPm;
     }
 
     const positiveStyle = {
