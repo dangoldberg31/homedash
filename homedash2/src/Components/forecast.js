@@ -4,19 +4,20 @@ import {useState, useEffect} from 'react';
 import {ForecastDaily} from './forecastDaily';
 import {ForecastHourly} from './forecastHourly';
 import {ForecastMinutely} from './forecastMinutely';
-import { LoadScreen } from "./loadScreen";
+import {LoadScreen} from "./loadScreen";
 import {Heading} from './sectionHeader'
-import { ForecastCurrently } from "./forecastCurrently";
+import {ForecastCurrently} from "./forecastCurrently";
 
 export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded1, setIsLoaded1] = useState(false);
+    const [isLoaded2, setIsLoaded2] = useState(false);
     // eslint-disable-next-line
     const [forecast, setForecast] = useState();
     // eslint-disable-next-line
     const [image, setImage] = useState(null);
     // eslint-disable-next-line
-    const [airQuality, setAirQuality] = useState(['loading','loading']);
+    const [airQuality, setAirQuality] = useState();
     const weatherKey = '438933efb34a9a9a24caa81bf3a40b11';
     const x = -73.94357;
     const y = 40.82587;
@@ -55,11 +56,11 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
             (result) => {
                 setForecast(result);
                 setImage(result['current']['weather'][0]['icon'])
-                setIsLoaded(true);
+                setIsLoaded1(true);
             },
             (error) => {
                 setError(error);
-                setIsLoaded(true);
+                setIsLoaded1(true);
             }
         )
     }, [x]);
@@ -72,9 +73,11 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
                 let pm25 = Math.round(airResult['list'][0]['components']['pm2_5']);
                 let quality = translateAQI(airResult['list'][0]['main']['aqi']);
                 setAirQuality([pm25, quality]);
+                setIsLoaded2(true);
             },
             (error) => {
                 setAirQuality([error, error]);
+                setIsLoaded2(true);
             }
         )
     }, [x]);
@@ -89,7 +92,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
                 <p>Error: {error.message}</p>
             </div>
         )
-    } else if (!isLoaded) {
+    } else if (!isLoaded1 || !isLoaded2) {
         return (
             <div>
                 <LoadScreen />
