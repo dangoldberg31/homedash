@@ -73,7 +73,7 @@ function App() {
       </header>
       <main>
         <div id="panel1" className="sectioncontainer">
-          <Panel1 convertUnixDate={convertUnixDate} />
+          <Panel1 convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime} />
         </div>
         <div id="panel2" className="sectioncontainer" >
           <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate}/>

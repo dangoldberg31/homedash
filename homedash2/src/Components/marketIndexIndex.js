@@ -3,14 +3,24 @@ import React from "react";
 import {useState, useEffect} from 'react';
 // import { LoadScreen } from './loadScreen';
 
-export const Index = ({data, convertUnixDate}) => {
+export const Index = ({data, dataDay, convertUnixDate, convertUnixTime}) => {
     const [styling, setStyling] = useState({
         color : 'black'
     })
     
-    const formatDate2 = () => {
-        let date = convertUnixDate(data['values'][0]['datetime'])
-        return date[0]+'/'+date[1];
+    const formatTime = () => {
+        let date = data['values'][0]['datetime'].split(' ')
+        let time = date[1].split(':')
+        let hour = time[0];
+        let minute = time[1];
+        let amPm = '';
+        if (hour >= 13) {
+            hour -= 12;
+            amPm = 'PM'
+        } else if (hour < 13) {
+            amPm = 'AM'
+        }
+        return date[1];
     }
 
     const positiveStyle = {
@@ -22,29 +32,26 @@ export const Index = ({data, convertUnixDate}) => {
     }
 
     useEffect(() => {
-        if (data['values'][0]['close'] - data['values'][0]['open'] > 0) {
+        if (data['values'][0]['close'] - dataDay['values'][0]['open'] > 0) {
             setStyling(positiveStyle)
-        } else if (data['values'][0]['close'] - data['values'][0]['open'] < 0) {
+        } else if (data['values'][0]['close'] - dataDay['values'][0]['open'] < 0) {
             setStyling(negativeStyle)
         }
         // eslint-disable-next-line
     },[])
 
     const pcentChange = () => {
-        return ((data['values'][0]['close'] - data['values'][0]['open'])*100/data['values'][0]['open']).toFixed(2);
+        return ((data['values'][0]['close'] - dataDay['values'][0]['open'])*100/dataDay['values'][0]['open']).toFixed(2);
     }
 
     return (
         <div id="marketcontainer">
             <div className="asset" >
                 <h2 className="assetheader">{data['meta']['symbol']}</h2>
-                <p className="datapoint" id="date">As of {formatDate2()}</p>
-                <p className="datapoint">
-                    <strong>Close: </strong> 
-                    ${(Math.round(data['values'][0]['close']*1))} 
-                    <span className="change" style={styling}> ({pcentChange()}%)
-                    </span>
-                </p>            
+                <p className="datapoint" id="date">As of {formatTime()}</p>
+                <p className="datapoint">${(Math.round(data['values'][0]['close']))} </p>
+                <p className="datapoint" style={styling}>${Math.round(data['values'][0]['close']-dataDay['values'][0]['open'])}</p>
+                <p className="datapoint" style={styling}> {pcentChange()}%</p>           
             </div>
         </div >
     );

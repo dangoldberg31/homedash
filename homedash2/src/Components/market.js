@@ -5,7 +5,7 @@ import React from "react";
 import {Assets} from './marketAssets';
 import {Indices} from './marketIndex';
 
-export const Market = ({convertUnixDate}) => {
+export const Market = ({convertUnixDate, convertUnixTime}) => {
     // const [data, setData] = useState(null);
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -98,8 +98,8 @@ export const Market = ({convertUnixDate}) => {
         return (
             <div id="marketcontainer">
                 {/* <h1 className="sectionheader">Markets</h1> */}
-                <h2 className="sectionhead">Market Indices (USA)</h2>
-                    <Indices indices={marketIndicesUSA} convertUnixDate={convertUnixDate}/>
+                <h2 className="sectionhead">Markets</h2>
+                    <Indices indices={marketIndicesUSA} convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime}/>
                     {/* <Indices indices={marketIndicesInternational}/> */}
                 <h2 className="sectionhead">Assets</h2>
                 <div id="assetContainer">
