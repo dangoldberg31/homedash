@@ -66,7 +66,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     }, [x]);
 
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${y}&lon=${x}&appid=${weatherKey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${y}&lon=${x}&appid=${weatherKey}`)
         .then(resp => resp.json())
         .then(
             (airResult) => {
