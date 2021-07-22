@@ -1,0 +1,34 @@
+#marketcontainer {
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+div.asset {
+    padding: 0%;
+    margin: 0;
+    text-align: center;
+}
+
+h2.assetheader {
+    font-size: 1.2rem;
+    margin: 0 0 1% 0;
+    padding: 0;
+}
+
+p.datapoint {
+    margin: 1% 0 1% 0;
+    padding: 0;
+    text-align: center;
+    font-size: .9rem;
+}
+
+#date {
+    font-size: .8rem;
+    text-align: center;
+    margin: 1% 0 1% 0;
+    padding: 0;
+}
+

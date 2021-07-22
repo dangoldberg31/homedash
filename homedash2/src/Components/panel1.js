@@ -5,7 +5,7 @@ import './panel1.css'
 import { useState, useEffect } from 'react';
 import { PanelPicker } from './panelPicker';
 
-export const Panel1 = () => {
+export const Panel1 = ({convertUnixDate}) => {
   const [panel, setPanel] = useState('news');
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Panel1 = () => {
     return (
       <div id="panelcontainer">
         <PanelPicker panel={panel} setPanel={setPanel}/>
-        <Market />
+        <Market convertUnixDate={convertUnixDate}/>
       </div>
     )
 
