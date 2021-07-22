@@ -29,12 +29,6 @@ export const Market = () => {
             shares: 3.424,
             type: 'crypto'
         },
-    //     {
-    //         name: 'Principalthing',
-    //         symbol: "MUTF: LTFPX",
-    //         shares: 3.424,
-    //         type: 'stock'
-    // }
     ]
 
     // const marketIndices = [

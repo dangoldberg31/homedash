@@ -4,6 +4,7 @@ div.panelbuttoncontainer {
     margin: 0%;
     background-color: black;
     width: 33%;
+    color: white;
 }
 
 #panelPicker {

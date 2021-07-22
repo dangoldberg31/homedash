@@ -16,8 +16,7 @@ export const Asset = ({asset}) => {
         color : 'black'
     })
     const APIKey = 'Axw59AkfZiL8F_ic4mgdsgtbye5r7aN8';
-    const stockEndpoint = `https://api.polygon.io/v2/aggs/ticker/${asset.symbol}/prev?adjusted=true&apiKey=${APIKey}`
-    const cryptoEndpoint = `https://api.polygon.io/v2/aggs/ticker/${asset.symbol}/prev?adjusted=true&apiKey=${APIKey}`
+    const endpoint = `https://api.polygon.io/v2/aggs/ticker/${asset.symbol}/prev?adjusted=true&apiKey=${APIKey}`
     
     const formatDate2 = (num) => {
         let date = new Date(num);
@@ -34,77 +33,36 @@ export const Asset = ({asset}) => {
         color: 'red'
     }
 
-    const getStock = async () => {
-        fetch(`${stockEndpoint}`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                let data = result;
-                let pcentChange = (data.results[0].c - data.results[0].o)*100/data.results[0].o;
-                let valChange = (data.results[0].c - data.results[0].o) * asset.shares;
-                setCloseDate(data.results[0].t);
-                setMarketClose(data.results[0].c);
-                if (valChange >= 0) {
-                    setPosNeg('+')
-                    setPercentChange(pcentChange);
-                    setValueChange(valChange);
-                    setStyling(positiveStyle);
-                } else if (valChange < 0) {
-                    setPosNeg('-')
-                    valChange = valChange * -1;
-                    pcentChange = pcentChange * -1;
-                    setPercentChange(pcentChange);
-                    setValueChange(valChange);
-                    setStyling(negativeStyle);
-                }
-                setIsLoaded(true);
-            },
-            (error) => {
-                setError(error);
-                setIsLoaded(true);
-            }
-        )
-        }
-
-    const getCrypto = async () => {
-        fetch(`${cryptoEndpoint}`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                let data = result;
-                let pcentChange = (data.results[0].c - data.results[0].o)*100/data.results[0].o;
-                let valChange = (data.results[0].c - data.results[0].o) * asset.shares;
-                setCloseDate(data.results[0].t);
-                setMarketClose(data.results[0].c);
-                if (valChange >= 0) {
-                    setPosNeg('+')
-                    setPercentChange(pcentChange);
-                    setValueChange(valChange);
-                    setStyling(positiveStyle);
-                } else if (valChange < 0) {
-                    setPosNeg('-')
-                    valChange = valChange * -1;
-                    pcentChange = pcentChange * -1;
-                    setPercentChange(pcentChange);
-                    setValueChange(valChange);
-                    setStyling(negativeStyle);
-                }
-                setIsLoaded(true);
-            },
-            (error) => {
-                setError(error);
-                setIsLoaded(true);
-            }
-        )
-        }
-
-
     useEffect(() => {
-        if (asset.type === 'stock') {
-            getStock();
-        } else if (asset.type === 'crypto') {
-            getCrypto();
-        }
+        fetch(`${endpoint}`)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                let data = result;
+                let pcentChange = (data.results[0].c - data.results[0].o)*100/data.results[0].o;
+                let valChange = (data.results[0].c - data.results[0].o) * asset.shares;
+                setCloseDate(data.results[0].t);
+                setMarketClose(data.results[0].c);
+                if (valChange >= 0) {
+                    setPosNeg('+')
+                    setPercentChange(pcentChange);
+                    setValueChange(valChange);
+                    setStyling(positiveStyle);
+                } else if (valChange < 0) {
+                    setPosNeg('-')
+                    valChange = valChange * -1;
+                    pcentChange = pcentChange * -1;
+                    setPercentChange(pcentChange);
+                    setValueChange(valChange);
+                    setStyling(negativeStyle);
+                }
+                setIsLoaded(true);
+            },
+            (error) => {
+                setError(error);
+                setIsLoaded(true);
+            }
+        )
     // eslint-disable-next-line
     }, []);
 

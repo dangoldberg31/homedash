@@ -43,52 +43,26 @@ div.sectioncontainer {
   width: 100%;
   height: 95vh;
   border-radius: 15px;
-}
-
-#panel1 {
+  background-color: white;
+  color: black;
   overflow:auto;
-  background-color: white;
 }
 
-#panel2 {
-  overflow: auto;
-  background-color: white;
-}
 
-#panel3 {
-  overflow: auto;
-  background-color: white;
-}
 
 h1.sectionheader {
-  color: black;
   font-size: 1.4rem;
   margin: 0% 0% 1% 0%;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 
 }
-/* #calendar {
-  overflow: auto;
-  grid-column: 1 / span 1;
-  grid-row: 3 / span 1;
-  margin: 0;
-  padding: 0;
-} */
-
-/* #sports {
-  overflow: auto;
-  grid-column: 2 / span 1;
-  grid-row: 3 / span 1;
-  margin: 0;
-  padding: 0;
-} */
 
 #market {
   overflow: auto;
   margin: 0;
   padding: 0;
-  background-color: white;
+
 }
 
 /* #testweather {
