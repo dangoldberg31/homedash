@@ -6,7 +6,7 @@ import {ForecastHourly} from './forecastHourly';
 import {ForecastMinutely} from './forecastMinutely';
 import { LoadScreen } from "./loadScreen";
 import {Heading} from './sectionHeader'
-// import { ForecastCurrently } from "./forecastCurrently";
+import { ForecastCurrently } from "./forecastCurrently";
 
 export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     const [error, setError] = useState(null);
@@ -99,7 +99,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
     return (
         <div id="container">
             <Heading text="Weather"/>
-            {/* <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} /> */}
+            <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} />
             <div id="minutely" className="section">
                 <h2 className="header">Next Hour Rainfall</h2>
                 <div className="childcontainer" id="forecastminutely" >

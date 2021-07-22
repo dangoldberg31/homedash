@@ -13,7 +13,7 @@ export const ForecastCurrently = ({convertUnixTime, convertUnixDate, convertUnix
                     
                 </div>
             </div>
-            <div id="dataContainer" className="section">
+            {/* <div id="dataContainer" className="section">
                 <div className="todaydata">
                     <p className="weatherData">Wind <br /><span className="data">{Math.round(forecast['current']['wind_speed'])} mph </span></p><br />
                     <p className="weatherData">Gusts <br /> <span className="data">{Math.round(forecast['hourly'][0]['wind_gust'])} mph</span></p>
@@ -34,7 +34,7 @@ export const ForecastCurrently = ({convertUnixTime, convertUnixDate, convertUnix
                     <p className="weatherData">Sunrise <br /><span className="data">{convertUnixTime(forecast['current']['sunrise']*1000)[0]+':'+convertUnixTime(forecast['current']['sunrise']*1000)[1]+' '+convertUnixTime(forecast['current']['sunrise']*1000)[2]}</span></p><br />
                     <p className="weatherData">Sunset <br /><span className="data">{convertUnixTime(forecast['current']['sunset']*1000)[0]+':'+convertUnixTime(forecast['current']['sunset']*1000)[1]+' '+convertUnixTime(forecast['current']['sunset']*1000)[2]}</span></p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
