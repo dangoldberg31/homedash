@@ -70,7 +70,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay}) => {
         .then(resp => resp.json())
         .then(
             (airResult) => {
-                let pm25 = Math.round(airResult['list'][0]['components']['pm2_5']);
+                let pm25 = (airResult['list'][0]['components']['pm2_5']);
                 let quality = translateAQI(airResult['list'][0]['main']['aqi']);
                 setAirQuality([pm25, quality]);
                 setIsLoaded2(true);

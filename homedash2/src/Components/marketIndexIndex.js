@@ -3,7 +3,8 @@ import React from "react";
 import {useState, useEffect} from 'react';
 // import { LoadScreen } from './loadScreen';
 
-export const Index = ({data, dataDay, convertUnixDate, convertUnixTime}) => {
+export const Index = ({data, dataDay, name, convertUnixDate, convertUnixTime}) => {
+    const [plusMinus, setPlusMinus] = useState(['?',0])
     const [styling, setStyling] = useState({
         color : 'black'
     })
@@ -34,8 +35,10 @@ export const Index = ({data, dataDay, convertUnixDate, convertUnixTime}) => {
     useEffect(() => {
         if (data['values'][0]['close'] - dataDay['values'][0]['open'] > 0) {
             setStyling(positiveStyle)
+            setPlusMinus(['+',1])
         } else if (data['values'][0]['close'] - dataDay['values'][0]['open'] < 0) {
             setStyling(negativeStyle)
+            setPlusMinus(['-',-1])
         }
         // eslint-disable-next-line
     },[])
@@ -49,9 +52,8 @@ export const Index = ({data, dataDay, convertUnixDate, convertUnixTime}) => {
             <div className="asset" >
                 <h2 className="assetheader">{data['meta']['symbol']}</h2>
                 <p className="datapoint" id="date">As of {formatTime()}</p>
-                <p className="datapoint">${(Math.round(data['values'][0]['close']))} </p>
-                <p className="datapoint" style={styling}>${Math.round(data['values'][0]['close']-dataDay['values'][0]['open'])}</p>
-                <p className="datapoint" style={styling}> {pcentChange()}%</p>           
+                <p className="datapoint">${(Number(data['values'][0]['close'])).toFixed(2)} </p>
+                <p className="datapoint" style={styling}>{plusMinus[0]}${(Number(data['values'][0]['close']-dataDay['values'][0]['open'])).toFixed(2)*plusMinus[1]} ({plusMinus[0]}{(pcentChange())*plusMinus[1]}%)</p>           
             </div>
         </div >
     );

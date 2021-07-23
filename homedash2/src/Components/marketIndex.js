@@ -22,24 +22,21 @@ export const Indices = ({indices, convertUnixDate, convertUnixTime}) => {
         .then(res => res.json())
         .then(
             (result) => {
-                if (result['status'] === 'ok') {
                     setData(result);
                     setIsLoaded1(true);
-                }
             },
             (error) => {
                 setError(error);
-                // setIsLoaded1(true);
+                setIsLoaded1(true);
             }
         )
         fetch(`https://api.twelvedata.com/time_series?symbol=${lookupArray}&interval=1day&apikey=3597a111131b4615a6ffd765ec9b2262`)
         .then(res => res.json())
         .then(
             (result) => {
-                if (result['status'] === 'ok') {
+
                     setDataDay(result);
                     setIsLoaded2(true);
-                }
             },
             (error) => {
                 setError(error);
@@ -68,7 +65,7 @@ export const Indices = ({indices, convertUnixDate, convertUnixTime}) => {
                 {indices.map(i => {
                     return (
                         <div id="indexInnerResultContainer">
-                            <Index data={data[i['symbol']]} dataDay={dataDay[i['symbol']]} convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime}/>
+                            <Index data={data[i['symbol']]} dataDay={dataDay[i['symbol']]} name={i['name']} convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime}/>
                         </div >
                     )
                 })}
