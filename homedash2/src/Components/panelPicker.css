@@ -1,8 +1,8 @@
 div.panelbuttoncontainer {
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     padding: 1%;
     margin: 0%;
-    background-color: black;
+    /* background-color: black; */
     width: 33%;
     color: white;
 }
@@ -12,4 +12,5 @@ div.panelbuttoncontainer {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: space-between;
+
 }

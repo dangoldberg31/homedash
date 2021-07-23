@@ -2,6 +2,7 @@ import React from 'react';
 import './sportsBaseball.css'
 import {BaseballGame} from './sportsBaseballGame'
 import { useEffect, useState } from 'react';
+import { LoadScreen } from './loadScreen';
 
 export const Baseball = () => {
     const [scores, setScores] = useState();
@@ -33,7 +34,7 @@ export const Baseball = () => {
     } else if (!isLoaded) {
         return (
             <div>
-                <p>Loading...</p>
+                <LoadScreen />
             </div>
         )
     } else {

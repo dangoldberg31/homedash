@@ -35,7 +35,7 @@ export const PanelPicker = ({panel, setPanel}) => {
     return (
       <div id="panelPicker">
         <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
-            <Heading text="News"/>
+            <Heading text="News" />
         </div>
         <div className="panelbuttoncontainer" id="marketbuttoncontainer" style={marketButton} onClick={marketChooser}>
             <Heading text="Markets"/>

@@ -8,6 +8,11 @@ import {Panel1} from './Components/panel1'
 
 function App() {
   const MTAKey = 'QXl3O3OrxU6T9894CHagv9t72mModQkk2zHmK1ad';
+  const headingStyle = {
+    'backgroundColor': 'black',
+    'color': 'white',
+    // 'border': '1px solid grey'
+  }
 
   const convertUnixTime = (num) => {
     let timeArray = [];
@@ -73,17 +78,17 @@ function App() {
         </p> */}
       </header>
       <main>
-        <div id="panel1" className="sectioncontainer">
+        <div id="panel1" className="panelContainer">
           <Panel1 convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime} />
         </div>
-        <div id="panel2" className="sectioncontainer" >
-          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate}/>
+        <div id="panel2" className="panelContainer" >
+          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} headingStyle={headingStyle}/>
         </div>
         {/* <div id="testweather" className="sectioncontainer" >
           <TestWeather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} weatherKey={weatherKey}/>
         </div> */}
-        <div id="panel3" className="sectioncontainer" >
-          <MTA MTAKey={MTAKey}/>
+        <div id="panel3" className="panelContainer" >
+          <MTA MTAKey={MTAKey} headingStyle={headingStyle}/>
         </div>
       </main>
     </div>

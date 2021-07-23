@@ -6,7 +6,7 @@ import {Heading} from './sectionHeader'
 // eslint-disable-next-line
 // import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 
-export const MTA = ({MTAKey}) => {
+export const MTA = ({MTAKey, headingStyle}) => {
     // eslint-disable-next-line
     const [error, setError] = useState(null);
     // eslint-disable-next-line
@@ -76,7 +76,9 @@ export const MTA = ({MTAKey}) => {
     // } else {
         return (
             <div id="MTA">
-                <Heading text="MTA"/>
+                <div className="headingOjbectContainer" style={headingStyle}>
+                    <Heading text="MTA"/>
+                </div>
                 <div className="container" id="mtaBody" >
                     <p>Placeholder</p>
                     <div className="mtasection">

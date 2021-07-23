@@ -1,7 +1,7 @@
 #loadcontainer {
   display: block;
   width: 100%;
-  border: 1px red solid;
+  /* border: 1px red solid; */
   padding: 0;
   margin: 0;
 }
