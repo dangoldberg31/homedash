@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import {Heading} from './sectionHeader'
 
 export const PanelPicker = ({panel, setPanel}) => {
+  const [newsButton, setNewsButton] = useState({'backgroundColor': 'grey'});
   const [sportsButton, setSportsButton] = useState({'backgroundColor': 'black'});
   const [marketButton, setMarketButton] = useState({'backgroundColor': 'black'});
-  const [newsButton, setNewsButton] = useState({'backgroundColor': 'grey'});
   const [weatherButton, setWeatherButton] = useState({'backgroundColor': 'black'});
-  const [transitButton, setTransitButton] = useState({'backgroundColor': 'grey'});
+  const [transitButton, setTransitButton] = useState({'backgroundColor': 'black'});
 
   const weatherChooser = (event) => {
     setPanel('weather')
@@ -60,12 +60,7 @@ export const PanelPicker = ({panel, setPanel}) => {
 
     return (
       <div id="panelPicker">
-        <div className="panelbuttoncontainer" id="weatherbuttoncontainer" style={weatherButton} onClick={weatherChooser}>
-            <Heading text="Weather" />
-        </div>
-        <div className="panelbuttoncontainer" id="transitbuttoncontainer" style={transitButton} onClick={transitChooser}>
-            <Heading text="Transit" />
-        </div>
+
         <div className="panelbuttoncontainer" id="newsbuttoncontainer" style={newsButton} onClick={newsChooser}>
             <Heading text="News" />
         </div>
@@ -74,6 +69,12 @@ export const PanelPicker = ({panel, setPanel}) => {
         </div>
         <div className="panelbuttoncontainer" id="sportsbuttoncontainer" style={sportsButton} onClick={sportsChooser}>
             <Heading text="Sports"/>
+        </div>
+        <div className="panelbuttoncontainer" id="weatherbuttoncontainer" style={weatherButton} onClick={weatherChooser}>
+            <Heading text="Weather" />
+        </div>
+        <div className="panelbuttoncontainer" id="transitbuttoncontainer" style={transitButton} onClick={transitChooser}>
+            <Heading text="Transit" />
         </div>
     </div>
     )
