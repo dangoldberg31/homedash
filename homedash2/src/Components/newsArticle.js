@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 // import nytlogo from '../Resources/nyt logo.jpg';
 import {Photo} from './newsArticleImage';
 
-export const Article = ({ article, id }) => {
+export const Article = ({ article, id, darkStyling }) => {
     
     const choosePhotos = () => {
         if (article.multimedia === null) {
@@ -27,7 +27,7 @@ export const Article = ({ article, id }) => {
         return (
             <div className="nytarticle">
                 <div id="storybox">
-                    <h1  id="headline"><a href={article.url}>{article.title}</a></h1>
+                    <h1  id="headline"><a href={article.url} style={darkStyling}>{article.title}</a></h1>
                     <p className="article">{article.abstract}</p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export const Article = ({ article, id }) => {
             <div className="nytarticle">
                 
                 <div class="storybox">
-                    <h1 id="headline"><a href={article.url}>{article.title}</a></h1>
+                    <h1 id="headline"><a href={article.url} style={darkStyling}>{article.title}</a></h1>
                     <Photo article={article} />
                     <p className="article">{article.abstract}</p>
                 </div>

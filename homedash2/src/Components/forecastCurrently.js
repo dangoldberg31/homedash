@@ -1,7 +1,7 @@
 import "./forecastCurrently.css"
 import React from "react";
 
-export const ForecastCurrently = ({convertUnixTime, convertUnixDate, convertUnixDay, forecast, airQuality, capFirst, image}) => {
+export const ForecastCurrently = ({convertUnixTime, forecast, airQuality, capFirst, image}) => {
 
     return (
         <div id="container">

@@ -5,7 +5,7 @@ import {Article} from './newsArticle'
 import { LoadScreen } from './loadScreen';
 // import nytlogo from '../Resources/nyt logo.jpg';
 
-export const News = () => {
+export const News = ({darkStyling}) => {
     const [articles, setArticles] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false)
@@ -56,7 +56,7 @@ export const News = () => {
                         if (articles.indexOf(article) % 3 === 0) {
                             return(
                                 <div className="article" >
-                                    <Article article={article} id={articles.indexOf(article)} />
+                                    <Article article={article} id={articles.indexOf(article)} darkStyling={darkStyling}/>
                                 </div>
                             );
                     } else {
@@ -69,7 +69,7 @@ export const News = () => {
                         if (articles.indexOf(article) % 3 === 1) {
                             return(
                                 <div className="article" >
-                                    <Article article={article} id={articles.indexOf(article)} />
+                                    <Article article={article} id={articles.indexOf(article)} darkStyling={darkStyling} />
                                 </div>
                             );
                     } else {
@@ -82,7 +82,7 @@ export const News = () => {
                         if (articles.indexOf(article)%3 === 2) {
                             return(
                                 <div className="article" >
-                                    <Article article={article} id={articles.indexOf(article)} />
+                                    <Article article={article} id={articles.indexOf(article)} darkStyling={darkStyling} />
                                     </div>
                             );
                     } else {

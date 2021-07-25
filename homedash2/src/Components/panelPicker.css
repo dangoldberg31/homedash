@@ -12,5 +12,25 @@ div.panelbuttoncontainer {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: space-between;
+}
+
+#weatherbuttoncontainer {
+    display: none;
+}
+
+#transitbuttoncontainer {
+    display: none;
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1440px) {
+
+    #weatherbuttoncontainer {
+        display: inline-block;
+    }
+    
+    #transitbuttoncontainer {
+        display: inline-block;
+    }
 
 }

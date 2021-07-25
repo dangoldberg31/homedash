@@ -2,16 +2,58 @@
 import './App.css';
 import {Weather} from './Components/forecast';
 import {MTA} from './Components/transit';
-import {Panel1} from './Components/panel1'
+import {Panel1} from './Components/panel1';
+import React from 'react';
+import {useState} from 'react'
 // import {MTA2} from './Components/transit2'
 // import {Calendar} from './Components/calendar';
 
 function App() {
+  const lightStyle = {
+    'backgroundColor': 'white',
+    'color': 'black'
+  }
+
+  const darkStyle = {
+    'backgroundColor': 'black',
+    'color': 'white'
+  }
+
+  const lightButton = {
+    'backgroundColor': 'black',
+    'border': 'white 3px solid',
+    'color': 'white'
+  }
+
+  const darkButton = {
+    'backgroundColor': 'white',
+    'color': 'black',
+    'border': 'black 3px solid'
+  }
+
+  const [darkMode, setDarkMode] = useState(false);
+  const [darkStyling, setDarkStyling] = useState(lightStyle);
+  const [darkDesc, setDarkDesc] = useState('Dark Mode')
+  const [darkButtonStyle, setDarkButtonStyle] = useState(lightButton);
   const MTAKey = 'QXl3O3OrxU6T9894CHagv9t72mModQkk2zHmK1ad';
   const headingStyle = {
     'backgroundColor': 'black',
     'color': 'white',
     // 'border': '1px solid grey'
+  }
+
+  const switchDarkMode = () => {
+    if (darkMode === false) {
+      setDarkMode(true);
+      setDarkStyling(darkStyle);
+      setDarkDesc('Light Mode')
+      setDarkButtonStyle(darkButton)
+    } else if (darkMode === true) {
+      setDarkMode(false);
+      setDarkStyling(lightStyle);
+      setDarkDesc('Dark Mode')
+      setDarkButtonStyle(lightButton)
+    }
   }
 
   const convertUnixTime = (num) => {
@@ -71,6 +113,9 @@ function App() {
       </head>
       <header className="App-header">
         <p id="headerrow1" className="appheader"> {convertUnixTime(Date.now())[0]+':'+convertUnixTime(Date.now())[1]+' '+convertUnixTime(Date.now())[2]}</p>
+        <div id="darkmode" className="appheader" >
+              <button className="appheader" onClick={switchDarkMode} style={darkButtonStyle}>{darkDesc}</button>
+        </div>
         <p id="headerrow2" className="appheader">  {convertUnixDate(Date.now())[3]} {convertUnixDate(Date.now())[0]+'/'+convertUnixDate(Date.now())[1]+'/'+convertUnixDate(Date.now())[2]}</p>
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -78,17 +123,17 @@ function App() {
         </p> */}
       </header>
       <main>
-        <div id="panel1" className="panelContainer">
-          <Panel1 convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime} />
+        <div id="panel1" className="panelContainer" style={darkStyling}>
+          <Panel1 convertUnixDate={convertUnixDate} convertUnixTime={convertUnixTime} headingStyle={headingStyle} darkMode={darkMode} darkStyling={darkStyling}/>
         </div>
-        <div id="panel2" className="panelContainer" >
-          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} headingStyle={headingStyle}/>
+        <div id="panel2" className="panelContainer" style={darkStyling}>
+          <Weather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} headingStyle={headingStyle} />
         </div>
         {/* <div id="testweather" className="sectioncontainer" >
           <TestWeather convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} weatherKey={weatherKey}/>
         </div> */}
-        <div id="panel3" className="panelContainer" >
-          <MTA MTAKey={MTAKey} headingStyle={headingStyle}/>
+        <div id="panel3" className="panelContainer" style={darkStyling}>
+          <MTA MTAKey={MTAKey} headingStyle={headingStyle} />
         </div>
       </main>
     </div>

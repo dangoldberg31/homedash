@@ -8,7 +8,7 @@ import {LoadScreen} from "./loadScreen";
 import {Heading} from './sectionHeader'
 import {ForecastCurrently} from "./forecastCurrently";
 
-export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay, headingStyle}) => {
+export const Weather = ({convertUnixTime, convertUnixDate, headingStyle}) => {
     const [error, setError] = useState(null);
     const [isLoaded1, setIsLoaded1] = useState(false);
     const [isLoaded2, setIsLoaded2] = useState(false);
@@ -104,7 +104,7 @@ export const Weather = ({convertUnixTime, convertUnixDate, convertUnixDay, headi
             <div className="headingOjbectContainer" style={headingStyle}>
                 <Heading text="Weather"/>
             </div>
-            <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} convertUnixDate={convertUnixDate} convertUnixDay={convertUnixDay} />
+            <ForecastCurrently forecast={forecast} airQuality={airQuality} capFirst={capFirst} image={image} convertUnixTime={convertUnixTime} />
             <div id="minutely" className="section">
                 <h2 className="header">Next Hour Rainfall</h2>
                 <div className="childcontainer" id="forecastminutely" >
