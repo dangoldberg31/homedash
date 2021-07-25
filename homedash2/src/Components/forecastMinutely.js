@@ -22,7 +22,7 @@ export const ForecastMinutely = ({forecast, convertUnixTime}) => {
         let precip = Number(forecast['minutely'][ind]['precipitation'])*.039 ;
         let time = convertUnixTime(Number(forecast['minutely'][ind]['dt'])*1000);
         let dataObj = {
-          'time': time,
+          'time': time[1],
           'precip': precip
         }
         dataArray.push(dataObj)
@@ -68,7 +68,7 @@ export const ForecastMinutely = ({forecast, convertUnixTime}) => {
             <BarChart  data={values}>
               <Bar dataKey="precip" fill="#8884d8" />
               <XAxis dataKey="time" />
-              <YAxis type="number" domain={[0, .5]}/>
+              <YAxis type="number" domain={[0, .3]}/>
             </BarChart>
           </ResponsiveContainer>
         </div>
